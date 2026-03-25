@@ -1,0 +1,50 @@
+Mike Donais, clearly delighted to be the first to arrive at Medivh's soirée.
+
+The most exciting time to be a Hearthstone fan is in the run up to, and aftermath of, a new card set. That’s when all the theorycrafting and experimentation happens, flooding the ladder with suboptimal homebrews rather than the brutally-tuned decks that eventually come to dominate. With just over a week until the first wing of One Night in Karazhan opens, I spoke with senior game designer Mike Donais about the new adventure. We discussed the cards spoiled so far, whether Warrior is currently too powerful, and what hope there is for Priest leaving the dumpster tier. We also talked a bit about Firelands Portal, and how the rarity of cards is allocated. And so, on with the party…
+
+PC Gamer: In every new set you tend to include some flashy cards like Reno Jackson or Yogg-Saron that have insane effects. Is Barnes that card for One Night in Karazhan, or do you still have something up your sleeves?
+
+Mike Donais: I think Barnes does a little bit of that. He’s pretty cool, and once you start to figure out all the different decks you can put him in, it’s pretty exciting, whether it’s a spell damage deck or just a deathrattle deck. I think The Curator does that too a little bit, and maybe there are some more cards that will get you excited about The Curator that people haven’t seen yet. But my favourite legendary hasn’t been revealed, so I think that will get people excited too.
+
+My favourite legendary hasn’t been revealed, so I think that will get people excited too.
+
+Can you give me a clue what kind of deck your secret legendary card will work in?
+
+Well ...he goes in my Priest deck and my Mage deck.
+
+When designing cards like Barnes and The Curator, is there pressure to keep one-upping yourselves?
+
+I think when a new set comes out there should be exciting legendaries. I don’t know if we can always one-up ourselves. Obviously the card design would get a little bit crazy and the game would start feeling less like Hearthstone if it just kept getting wackier and wackier with every set. But there needs to be some legendaries that make people go ‘wow’, right? When Prince Malchezaar was revealed yesterday, a lot of people were very excited, and that shows that there are a lot of different types of audience. Someone did a Twitter poll asking ‘How good is Prince Malchezaar?’, and the overwhelming majority thought it was too powerful, which really shows that the audience is varied and just because one guy on Reddit doesn’t like a card, it doesn’t mean everybody feels that way.
+
+Prince Malchezaar While his effect may seem powerful at a glance, filling your deck with random extra legendaries will mean you're less likely to draw into the cards you've put there on purpose because they synergise with your strategy. Unless your strategy is to draw Lorewalker Cho occasionally.
+
+Speaking of Reddit, on Competitive Hearthstone they were pretty down on Prince Malchezaar, and saw it as a card primarily for new players. Is that fair?
+
+He does a bunch of different things. One of the things that he does is, like you said, for people who don’t own a lot of legendaries, they just buy this Adventure and suddenly they can play with a bunch of different legendaries. Maybe they’ll find one they like and craft it because it’s been really fun for them. Another thing he can be used for is heavy fatigue decks. If you’re tired of running out of cards when you play against a certain deck, they you can run this guy and never have to worry about running out of cards. A little bit like Elise Starseeker.
+
+The third thing is it appeals to a different section of the audience than some of the other cards. Barnes appeals to people who are like “Oh yeah, I understand exactly how value works and that 1/1 Deathrattle is really good value”. Prince Malchezaar is more about “Oh cool, five more legendaries, that’s awesome!” It’s a different type of audience, and it’s important that each legendary has that kind of thing whereby different people want to use it.
+
+Talking about Deathrattles, aren’t you worried that the existence of N'Zoth will ultimately restrict what you can do with them? Particularly in Wild.
+
+One of the things that we did when we made N'Zoth is that we made sure there weren’t a lot of strong Deathrattle cards in the same set, because we wanted him to come out and for us to understand exactly how good he was in the real world, with the millions of games of play testing and data and so on. So the one Taunt Deathrattle guy we made, we made fairly weak, and he still got played. The 2/3 Tauren guy—he still gets played in some decks, so that just shows how important Deathrattle minions can be. But now that we have a feel for exactly how good N’Zoth is, we can carefully put out more Deathrattles and watch the metagame evolve with each one.
+
+We're actually thinking about whether we can do some engineering work to give us more control over Arena.
+
+One of the Deathrattles in One Night in Karazhan is the Hunter card Kindly Grandmother. Isn’t the real issue Wild, though, where N’Zoth will be around forever?
+
+I think Kindly Grandma is a pretty safe one because it goes in Hunter, which isn’t a great N’Zoth deck to start with, but I don’t think we’re going to be limited too much on Deathrattles. I don’t think we should do another Sludge Belcher, but we shouldn’t do a Sludge Belcher anyway. In Wild, N’Zoth decks are going to be amazing, but so are the other decks, so I think it’s OK.
+
+Prince Malchezaar enables you to play with a bigger deck, as do cards like Burgle and Gang Up. Is manipulating deck size an area of design you want to experiment with more? Could you foresee cards which let you run a smaller deck?
+
+I think it’s a cool design space, and because we didn’t do it at all in the base set it’s a new design space, so it’ll get people excited and I think we should explore it. One of the things we want to be careful with is how long it takes to play a game of Hearthstone. If you have too much stuff that adds to your deck size, like Gang Up and Prince Malchezaar, than maybe the average length of games will increase. We don’t see that happening so far, but we’re going to be careful and watch it as we go.
+
+Kripparian, who’s the most prominent Arena streamer, had a really negative reaction to the new Mage spell Firelands Portal. [See video above.] It wasn’t that he thought it was a bad card, it was that he felt it shouldn’t have a common rarity, because that will mean it’s picked too regularly given how powerful the effect is. How do you decide the rarity of non-legendary cards, especially with Arena in mind?
+
+It’s a good question. We care a lot about that, and when we set our commonalities we look at which cards in the set are good in Arena, which cards are not too good, which classes need a buff and which classes don’t. So there’s a two-part answer to that question. The first part is that there are three [new] Mage cards: two commons and a rare. We looked at the three mage cards, and two of them are really good in Arena, while one of them is not as good in Arena—it is more situational. So we put the one that was not very good at common, because we wanted to make sure that in Arena Mage had that kind of weaker card there at common. And that left the other two cards. Babbling Book and Firelands Portal are both very strong in Arena, so we made [Firelands Portal] a common and [Babbling Book] a rare. But for Warrior and some other classes we put both of the strong cards at common, specifically to help those classes out in the Arena.
+
+I’m not sure that will calm Kripp down. What’s to stop you just having two rares and a common for Mage instead? What would that break?
+
+It’s an idea we’re thinking about. Actually, it would be a little bit weird if Mage gets two [rares] and everyone else gets two commons, but it’s a valid point. Something to think about. We actually are thinking about whether we can do some engineering work to give us more control over Arena, and help us balance out Arena using percentages and technology. That’s a lot of work, and involves some big rewrites, but in the long run I think that might help us with the trade-off that it might be a little bit more confusing for players if the cards have different percentages. So it’s not something that we’re locked in on, or sure about, but we’re thinking about it.
+
+On the next page: Does Priest need to be fixed and is Mike worried by the power of Warrior right now?
+<|endoftext|>

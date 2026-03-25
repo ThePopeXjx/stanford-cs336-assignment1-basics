@@ -262,14 +262,14 @@ class Tokenizer:
         def decode_str_to_bytes(s: str) -> bytes:
             b = bytes()
             for c in s:
-                b += byte_decoder[c]
+                b += bytes([byte_decoder[c]])
             return b
 
         with open(vocab_filepath, "r", encoding="utf-8") as f:
             serialized_vocab = json.load(f)
         vocab = {
             idx: decode_str_to_bytes(str_repr)
-            for idx, str_repr in serialized_vocab.items()
+            for str_repr, idx in serialized_vocab.items()
         }
 
         merges = list()
@@ -277,8 +277,8 @@ class Tokenizer:
             for line in f:
                 pairs = line.rstrip("\n").split()
                 assert len(pairs) == 2
-                merges.append(decode_str_to_bytes(pairs[0]),
-                              decode_str_to_bytes(pairs[1]))
+                merges.append((decode_str_to_bytes(pairs[0]),
+                               decode_str_to_bytes(pairs[1])))
         
         return cls(vocab, merges, special_tokens)
     

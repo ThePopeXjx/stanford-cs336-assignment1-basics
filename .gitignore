@@ -32,3 +32,9 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# large files
+output/tinystories/train_tokens.npy
+output/tinystories/dev_tokens.npy
+output/openwebtext/train_tokens.npy
+output/openwebtext/dev_tokens.npy

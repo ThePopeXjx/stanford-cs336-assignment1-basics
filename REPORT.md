@@ -41,3 +41,20 @@ It doesn't make sense.
 (b)
 At lower indices, both vocabularies contains some common words. For example, 'Ġt' is 257 and 'he' is 259 in both vocabs.
 But generally, tokens differ a lot, especially in higher indices.
+
+# 2.7
+
+(a)
+TinyStories tokenizer on TinyStories samples: compression ratio 4.14.
+OpenWebText tokenizer on OpenWebText samples: compression ratio 4.36.
+
+(b)
+TinyStories tokenizer on OpenWebText samples: compression ratio 3.25.
+There's a significant drop.
+
+(c)
+Assume we use TinyStories tokenizer, whose throughput is 868425.42 bytes pre second.
+So it would take approximately 1019 seconds (about 17 minutes).
+
+(d)
+2^15 = 32,768, which is just a little higher than the vocab size of 32,000.
