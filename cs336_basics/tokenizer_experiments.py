@@ -21,8 +21,10 @@ MERGES_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/openweb
 # NPY_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/tinystories/train_tokens.npy")
 # DATASET_PATH = Path("/mnt/data1/jiaxingxu/TinyStoriesV2-GPT4-valid.txt")
 # NPY_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/tinystories/dev_tokens.npy")
-DATASET_PATH = Path("/mnt/data1/jiaxingxu/owt_train.txt")
-NPY_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/openwebtext/train_tokens.npy")
+# DATASET_PATH = Path("/mnt/data1/jiaxingxu/owt_train.txt")
+# NPY_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/openwebtext/train_tokens.npy")
+DATASET_PATH = Path("/mnt/data1/jiaxingxu/owt_valid.txt")
+NPY_PATH = Path("/home/jiaxingxu/spring2024-assignment1-basics/output/openwebtext/dev_tokens.npy")
 
 
 def test_encoding_performance(sample_root: Path, vocab_path: Path, merges_path: Path):

@@ -8,6 +8,7 @@ import numpy.typing as npt
 import torch
 
 from cs336_basics.tokenizer import Tokenizer, train_bpe
+from cs336_basics.rmsnorm import RMSNorm
 
 
 def run_positionwise_feedforward(
@@ -333,7 +334,8 @@ def run_rmsnorm(
         FloatTensor of with the same shape as `in_features` with the output of running
         RMSNorm of the `in_features`.
     """
-    raise NotImplementedError
+    rmsnorm = RMSNorm(d_model, weights["weight"], eps)
+    return rmsnorm(in_features)
 
 
 def run_gelu(in_features: torch.FloatTensor) -> torch.FloatTensor:
