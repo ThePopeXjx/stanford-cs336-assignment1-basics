@@ -7,10 +7,9 @@ from typing import IO, BinaryIO, Iterable, Optional, Type
 import numpy.typing as npt
 import torch
 
-from cs336_basics.gelu import gelu
-from cs336_basics.positionwise_ffn import PositionWiseFFN
+from cs336_basics.functions import gelu, softmax, scaled_dot_product_attention
+from cs336_basics.modules import RMSNorm, PositionWiseFFN
 from cs336_basics.tokenizer import Tokenizer, train_bpe
-from cs336_basics.rmsnorm import RMSNorm
 
 
 def run_positionwise_feedforward(
@@ -92,7 +91,7 @@ def run_scaled_dot_product_attention(
         with the output of running your scaled dot product attention
         implementation with the provided key, query, and value tensors.
     """
-    raise NotImplementedError
+    return scaled_dot_product_attention(K, Q, V, mask, pdrop)
 
 
 def run_multihead_self_attention(
@@ -398,7 +397,7 @@ def run_softmax(in_features: torch.FloatTensor, dim: int) -> torch.FloatTensor:
         FloatTensor of with the same shape as `in_features` with the output of
         softmax normalizing the specified `dim`.
     """
-    raise NotImplementedError
+    return softmax(in_features, dim)
 
 
 def run_cross_entropy(inputs: torch.FloatTensor, targets: torch.LongTensor):

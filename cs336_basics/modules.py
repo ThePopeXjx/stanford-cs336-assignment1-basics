@@ -6,6 +6,8 @@ from typing import Optional
 from torch import nn
 import torch
 
+from .functions import gelu
+
 
 class RMSNorm(nn.Module):
     def __init__(
@@ -31,3 +33,16 @@ class RMSNorm(nn.Module):
 
         rms = torch.sqrt(x.pow(2).mean(dim=-1, keepdim=True) + self.eps)
         return (x / rms) * self.weight
+
+
+class PositionWiseFFN(nn.Module):
+    def __init__(self, d_model: int, d_ff: int):
+        super(PositionWiseFFN, self).__init__()
+        self.w1 = nn.Linear(d_model, d_ff, bias=False)
+        self.w2 = nn.Linear(d_ff, d_model, bias=False)
+
+    def forward(self, x: torch.Tensor):
+        x = self.w1(x)
+        x = gelu(x)
+        x = self.w2(x)
+        return x
