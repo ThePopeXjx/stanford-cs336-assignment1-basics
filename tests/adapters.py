@@ -339,7 +339,8 @@ def run_rmsnorm(
         FloatTensor of with the same shape as `in_features` with the output of running
         RMSNorm of the `in_features`.
     """
-    rmsnorm = RMSNorm(d_model, weights["weight"], eps)
+    rmsnorm = RMSNorm(d_model, eps)
+    rmsnorm.load_state_dict(weights)
     return rmsnorm(in_features)
 
 
