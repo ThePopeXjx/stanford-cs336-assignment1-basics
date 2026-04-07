@@ -7,8 +7,17 @@ from typing import IO, BinaryIO, Iterable, Optional, Type
 import numpy.typing as npt
 import torch
 
-from cs336_basics.functions import gelu, softmax, scaled_dot_product_attention
-from cs336_basics.modules import RMSNorm, PositionWiseFFN, MultiheadSelfAttention
+from cs336_basics.functions import (
+    gelu,
+    softmax,
+    scaled_dot_product_attention
+)
+from cs336_basics.modules import (
+    RMSNorm,
+    PositionWiseFFN,
+    MultiheadSelfAttention,
+    TransformerBlock
+)
 from cs336_basics.tokenizer import Tokenizer, train_bpe
 
 
@@ -215,7 +224,14 @@ def run_transformer_block(
         FloatTensor of shape (batch_size, sequence_length, d_model) with the output of
         running the Transformer block on the input features.
     """
-    raise NotImplementedError
+    net = TransformerBlock(d_model, num_heads, d_ff, attn_pdrop, residual_pdrop)
+    for name in ["q", "k", "v"]:
+        full_weight = weights.pop(f"attn.{name}_proj.weight")
+        d = d_model // num_heads
+        for i in range(num_heads):
+            weights[f"attn.{name}_heads.{i}.weight"] = full_weight[i*d:(i+1)*d]
+    net.load_state_dict(weights)
+    return net(in_features)
 
 
 def run_transformer_lm(

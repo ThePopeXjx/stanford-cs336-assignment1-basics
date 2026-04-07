@@ -73,5 +73,18 @@ class MultiheadSelfAttention(nn.Module):
 class TransformerBlock(nn.Module):
     def __init__(self, d_model: int, num_heads: int, d_ff: int,
                  attn_pdrop: float, residual_pdrop: float):
-        pass
-
+        super(TransformerBlock, self).__init__()
+        self.ln1 = RMSNorm(d_model)
+        self.attn = MultiheadSelfAttention(d_model, num_heads, attn_pdrop)
+        self.residual_dropout = nn.Dropout(residual_pdrop)
+        self.ln2 = RMSNorm(d_model)
+        self.ffn = PositionWiseFFN(d_model, d_ff)
+    
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        y = self.ln1(x)
+        y = self.attn(y)
+        y = self.residual_dropout(y) + x
+        z = self.ln2(y)
+        z = self.ffn(z)
+        z = self.residual_dropout(z) + y
+        return z
