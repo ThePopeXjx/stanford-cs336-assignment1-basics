@@ -30,9 +30,9 @@ def scaled_dot_product_attention(
     dot_product = Q @ K.transpose(-1, -2) / sqrt(d_k)
     if mask is not None:
         mask = torch.zeros_like(mask, dtype=torch.float32).masked_fill(mask, -torch.inf)
-        atten_score = softmax(dot_product + mask, -1)
+        attn_score = softmax(dot_product + mask, -1)
     else:
-        atten_score = softmax(dot_product, -1)
+        attn_score = softmax(dot_product, -1)
     if pdrop:
-        atten_score = F.dropout(atten_score, pdrop)
-    return atten_score @ V
+        attn_score = F.dropout(attn_score, pdrop)
+    return attn_score @ V

@@ -6,7 +6,7 @@ from typing import Optional
 from torch import nn
 import torch
 
-from .functions import gelu
+from .functions import gelu, scaled_dot_product_attention
 
 
 class RMSNorm(nn.Module):
@@ -46,3 +46,32 @@ class PositionWiseFFN(nn.Module):
         x = gelu(x)
         x = self.w2(x)
         return x
+
+
+class MultiheadSelfAttention(nn.Module):
+    def __init__(self, d_model: int, num_heads: int, attn_pdrop: Optional[float]):
+        super(MultiheadSelfAttention, self).__init__()
+        assert d_model % num_heads == 0, \
+            f"Division error: d_model({d_model}) should be divisible by num_heads({num_heads})"
+        self.d_model = d_model
+        self.d_k = d_model // num_heads
+        self.d_v = d_model // num_heads
+        self.num_heads = num_heads
+        self.attn_pdrop = attn_pdrop
+        self.q_heads = nn.ModuleList([ nn.Linear(d_model, self.d_k, bias=False) for i in range(num_heads) ])
+        self.k_heads = nn.ModuleList([ nn.Linear(d_model, self.d_k, bias=False) for i in range(num_heads) ])
+        self.v_heads = nn.ModuleList([ nn.Linear(d_model, self.d_v, bias=False) for i in range(num_heads) ])
+        self.output_proj = nn.Linear(num_heads * self.d_v, d_model, bias=False)
+
+    def forward(self, x: torch.Tensor):
+        seq_len = x.shape[-2]
+        mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).to(torch.bool)
+        heads = list()
+        for i in range(self.num_heads):
+            q = self.q_heads[i](x)
+            k = self.k_heads[i](x)
+            v = self.v_heads[i](x)
+            heads.append(scaled_dot_product_attention(k, q, v, mask, self.attn_pdrop))
+        out = torch.cat(heads, dim=-1)
+        out = self.output_proj(out)
+        return out

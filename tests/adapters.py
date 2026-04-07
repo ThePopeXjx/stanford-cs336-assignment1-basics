@@ -8,7 +8,7 @@ import numpy.typing as npt
 import torch
 
 from cs336_basics.functions import gelu, softmax, scaled_dot_product_attention
-from cs336_basics.modules import RMSNorm, PositionWiseFFN
+from cs336_basics.modules import RMSNorm, PositionWiseFFN, MultiheadSelfAttention
 from cs336_basics.tokenizer import Tokenizer, train_bpe
 
 
@@ -141,7 +141,9 @@ def run_multihead_self_attention(
         torch.FloatTensor with the output of running your optimized, batched multi-headed attention
         implementation with the given QKV projection weights and input features.
     """
-    raise NotImplementedError
+    net = MultiheadSelfAttention(d_model, num_heads, attn_pdrop)
+    net.load_state_dict(weights)
+    return net(in_features)
 
 
 def run_transformer_block(
